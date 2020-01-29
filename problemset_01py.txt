@@ -1,0 +1,143 @@
+PROBLEM SET 01 (PYTHON)
+
+1)
+print("enter three numbers")
+a= int(input())
+b= int(input())
+c= int(input())
+    
+l=[]
+if a%2!=0:
+    l.append(a)
+if b%2!=0:
+    l.append(b)
+if c%2!=0:
+    l.append(c)
+if len(l)==0:
+    print("no odd numbers entered")
+else:
+    max=0
+    for x in l:
+        if x>max:
+            max=x 
+    print("largest odd number is",max)
+
+2)
+def right_justify(s):
+    print((70-len(s))*" ",s)
+right_justify("cigna") 
+        
+
+3)
+
+print("enter 10 integers")
+l=[]
+for i in range(0,10):
+    a=int(input())
+    l.append(a)
+l1=[]
+for j in l:
+    if j%2!=0:
+        l1.append(j)
+if len(l1)==0:
+    print("no odd number was entered")
+else:
+    max=0
+    for k in l1:
+        if k>max:
+            max=k
+    print("largest odd number is ",max) 
+
+4)
+a)
+print("enter the radius")
+r=eval(input())
+vol=(4/3)*3.14*r*r*r
+print(vol)
+
+b)
+print("enter price of book")
+price=eval(input())
+discounted_p=0.6*price
+print("enter number of copies")
+c=int(input())
+final_p=discounted_p*c + 3 + 0.75*(price-1)
+print("total cost ",final_p)
+
+c)
+tempo=7*60+12
+total_time=e_pace*2 + tempo*3
+minutes=int(total_time/60)
+seconds=total_time%60
+m=52+minutes
+if m>=60:
+    h=6+int(m/60)
+    mi=m%60
+    print("reach time is ",h,":",mi)
+else:
+    print("reach time is 6:",m)
+
+
+5)
+
+
+6)
+
+a="1.23,1.56,6.66,1.25,4.55"
+x=a.split(",")
+print(x)
+sum=0
+for i in x:
+    sum=sum+float(i)
+print(sum)    
+    
+
+7)
+
+print("enter two strings")
+a=input()
+b=input()
+
+
+def isln(a,b):
+    
+    if (a in b) or (b in a):
+        print("TRUE")
+    
+    else:
+        print("false")
+        
+isln(a,b) 
+
+8)
+def getRatios(vect1, vect2):
+    l = []
+    for i in range(0,len(vect1)):
+        try:
+            a = vect1[i]/vect2[i]
+            l.append(a)
+        except ZeroDivisionError:
+            print("Divide by Zero Error")
+    return l
+l1 = [1,2,3,5,0]
+l2 = [1,2,0,5,7]
+print(getRatios(l1,l2))
+
+9)
+width = 17 
+height = 12.0 
+delimiter = '.'
+print(width/2)
+print(width/2.0)
+print(height/3)
+print(1 + 2 * 5)
+print(delimiter * 5)
+
+output:
+8.5                                                                                                                           
+8.5                                                                                                                           
+4.0                                                                                                                           
+11 
+.....
+
+10)  

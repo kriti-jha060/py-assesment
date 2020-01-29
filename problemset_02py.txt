@@ -1,0 +1,130 @@
+problem set 02
+1)
+print("enter to numbers to find gcd")
+def gcd(a,b):
+    if b==0:
+        return a
+    else:
+        return gcd(b,a%b)
+
+a=int(input())
+b=int(input())
+print("GCD of",a, "and",b, "is",gcd(a,b))
+
+
+2)
+def is_power(a, b):
+    while a % b == 0:
+        if a == b: 
+            return True
+        a /= b
+    return False
+
+print(is_power(10, 2))
+print(is_power(8, 2))
+
+
+3)
+ITERATIVE
+def factl(n):
+    f=1 
+    for i in range(1,num+1):
+        f=f*i 
+    print("factoria is",f)
+num=int(input())
+factl(num)
+
+RECURSIVE
+def factR (n):
+    if n==1:
+        return n
+    else:
+        return n*factR(n-1)
+
+a=int(input())       
+print("factorial of",a,"is",factR(a))
+
+4)
+b="10011"
+l=len(b)
+sum=0
+i=l-1
+for j in b:
+    sum=sum+int(j)*pow(2,i)
+    i=i-1
+    
+print(sum)
+
+5)
+def sumdigits(s):
+    l=len(s)
+    sum=0
+    try:
+        for i in range(0,l):
+            if s[i].isdigit():
+                sum=sum+int(s[i])
+            else:
+                continue
+        return(sum)
+    except:
+        print("no digit was entered")
+print("sum is",sumdigits("a2b3c44de2"))
+
+6)
+
+def findAnEven(l):
+        s=len(l)
+        for i in range (0,s):
+            try:
+                if l[i]%2==0:
+                
+                    print("first even number is",l[i])
+                    break
+                elif i==s-1:
+                    raise ValueError("no even numbers entered")
+            except ValueError as e:
+                print(e)
+        
+                 
+findAnEven([3,3,8,6,2,9,6,11])
+findAnEven([3,3,5,5,9,11])
+
+7)
+def ispalindrome(s):
+    l=len(s)
+    j=l-1
+    y=1
+    for i in range(0,int(l/2)):
+        if(s[i] != s[j]):
+            print(s," is not a palindrome")
+            y=2;
+            break
+            
+        else:
+            j=j-1
+    if y==1:
+        
+        print(s," is a palindrome")
+    
+ispalindrome("mom")
+ispalindrome("kriti")
+ispalindrome("malayalam")
+
+8)
+def eval_loop(a):
+    f=a 
+    while f==1:
+        print("enter a string or done to finish")
+        a=input()
+        if a!="done":
+            s1=eval(a)
+            print("the output is ", s1)
+        else:
+            
+            print("the program has ended")
+            f=2
+            break
+    
+eval_loop(1)
+
+9)
