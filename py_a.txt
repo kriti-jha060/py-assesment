@@ -1,11 +1,15 @@
 
 ## 5 objects
-	class point:
+import sys
+class point:
     _count = 0
     def __new__(cls, *args, **kwargs):
         cls._count += 1
-        if cls._count > 5:
-            raise TypeError("more than 5 objects are created")
+        if cls._count < 5:
+		print("instance created")
+	else:	
+            print("more than 5 objects are created")
+	    sys.exit()
     def __init__(self):
         self.__cname = 'points'
 p1 = point()
@@ -14,6 +18,14 @@ p3 = point()
 p4 = point()
 p5 = point()
 p6 = point()
+
+output:
+ instance created                                                                                                             
+ instance created                                                                                                             
+ instance created                                                                                                             
+ instance created                                                                                                             
+ instance created                                                                                                             
+more than 5 objects are created
 
 
 
