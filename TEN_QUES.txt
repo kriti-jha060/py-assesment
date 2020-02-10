@@ -1,0 +1,166 @@
+1)VALID EMAIL ID
+
+import re
+def valid_mail_id(input1):
+    list_of_valid_mails=['gmail','hotmail','yahoo','accenture','oerr']
+    x=re.search(r'([^\w])([a-z]*)', input1)
+    mail=x.group(2)
+    if mail in list_of_valid_mails:
+        print(input1,"is a valid mail id")
+    else:
+        print("Invalid email id entered")
+            
+
+input1='therain2345as@gmail.com'
+valid_mail_id(input1)
+
+2)ALTEAST 2 CHARACTERS BEFORE . IN EMAIL
+
+
+
+3)
+PYRAMID
+
+def triangle(n): 
+      
+     
+    k = 2*n - 2
+  
+     
+    for i in range(0, n): 
+      
+        
+        for j in range(0, k): 
+            print(end=" ") 
+      
+        
+        k = k - 1
+      
+        
+        for j in range(0, i+1): 
+          
+            
+            print("* ", end="") 
+      
+        
+        print("\r") 
+  
+
+n = 5
+triangle(n)
+ 
+4)CAMEL CASE
+
+def camel_case(a):
+
+    for i in a:
+        b=ord(i)
+        if b>=65 and b<=90:
+            b=b+32
+            print(chr(b), end="")
+        elif b>=97 and b<=122:
+            b=b-32
+            print(chr(b),end="")
+
+print("enter a string")
+a=input()
+camel_case(a)
+
+O/P:
+enter a string                                                                                                                
+aaSSS                                                                                                                         
+AAsss
+
+5)SUBSTRING
+
+def sub(st,sb):
+    count=0
+    l=[]
+    for i in st:
+        if i in sb:
+            if i not in l:
+                l.append(i)
+                count=count+1
+    if count<3:
+        print("substring is too small")
+    elif count==3:
+        print("substring is present in string")
+        
+print("enter string and substring of length 3")
+string1=input()
+sub1=input()
+sub(string1,sub1)
+
+o/p:
+enter string and substring of length 3                                                                                        
+asssddddd                                                                                                                     
+asd                                                                                                                           
+substring is present in string 
+            
+
+6)VOWEL ADDITION
+
+vowels={'a':1,'e':2,'i':3,'o':4,'u':5}
+s='the lazy fox had a good sleep'
+sum_of_vowels=0
+for i in s:
+    if i in vowels.keys():
+        sum_of_vowels=sum_of_vowels+vowels.get(i)
+print(sum_of_vowels)
+
+o/p:
+21
+
+
+7)SUM OF DIGITS IN STRING
+
+def sum_digit(s):
+    L=[]
+    sum1=0
+    for i in s:
+        if i.isdigit():
+            L.append(i)
+    for j in L:
+        sum1=sum1+int(j) 
+        
+    return sum1
+print("print a sequence of characters")
+a=input()
+print("sum of digits is",sum_digit(a))
+            
+
+O/P:
+qwer1234                                                                                                                      
+sum of digits is 10 
+
+8) ORDER BASED ON THIRD ELEMENT
+
+
+9)PALINDOME
+def check_palindrome(n):
+    n2=0
+    if n<0:
+        print ("not palindrome")
+    else:
+        n1=n
+        while n>0:
+            num=n%10
+            n2=num+n2*10
+            n=n//10
+        if n1==n2:
+            print("palindrome")
+        else:
+            print("not palindrome")
+
+a=int(input("Enter:"))
+check_palindrome(a)
+
+o/p:
+Enter:121                                                                                                                   
+palindrome
+
+10)LONGEST CONTINUOUS STRING
+
+
+
+
