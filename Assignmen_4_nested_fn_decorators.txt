@@ -1,0 +1,187 @@
+### nested function
+#### decorators
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+def speak():
+    print ("ABC")
+    
+def action(fun):
+    print("DEF")
+    fun()
+action(speak())
+
+o/p:
+   fun()                                                                                                                     
+TypeError: 'NoneType' object is not callable  
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+def speak():
+    print ("ABC")
+    
+def action(fun):
+    print("DEF")
+    fun()
+action(speak)
+
+o/p:
+DEF                                                                                                                           
+ABC                                                                                                                           
+    
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+def outer():
+    print("inside outer")
+    def inner():
+        print("inside inner")
+        
+outer()
+
+o/p:
+inside outer 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+def outer():
+    
+    def inner():
+        pass
+    print "inside"
+        
+outer()
+
+o/p:
+File "main.py", line 5                                                                                                      
+    print "inside"                                                                                                            
+                 ^                                                                                                            
+SyntaxError: Missing parentheses in call to 'print' 
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+def action():
+    print("inside action")
+    return "abc"
+    
+action2=action
+action()
+print(action2.__name__)
+
+
+o/p:
+inside action                                                                                                                 
+action 
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+    
+def talk(func):
+    def inner():
+        if func.__name__ =="speak_loud":
+            a=func()
+            return a.upper()
+        else:
+            b=func()
+            return b.lower()
+    return inner
+    
+@talk
+def speak_loud():
+    return "Listen ABC"
+    
+@talk
+def speak_soft():
+    return "Listen ABC"
+print(speak_loud())
+print(speak_soft())
+
+
+o/p:
+LISTEN ABC                                                                                                                    
+listen abc 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+
+
+def split_word(func):
+    def inner():
+        a=func()
+        b=a.split(" ")
+        return b 
+    return inner
+def talk(func):
+    def inner():
+        if func.__name__ =="speak_loud":
+            a=func()
+            return a.upper()
+        else:
+            b=func()
+            return b.lower()
+    return inner
+
+@split_word    
+@talk
+def speak_loud():
+    return "Listen ABC"
+    
+@talk
+def speak_soft():
+    return "Listen ABC"
+print(speak_loud())
+print(speak_soft())
+
+
+o/p:
+['LISTEN', 'ABC']                                                                                                             
+listen abc 
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+def split_word(func):
+    def inner():
+        a=func()
+        b=a.split(" ")
+        return b 
+    return inner
+def talk(func):
+    def inner():
+        if func.__name__ =="speak_loud":
+            a=func()
+            return a.upper()
+        else:
+            b=func()
+            return b.lower()
+    return inner
+
+@talk
+@split_word    
+def speak_loud():
+    return "Listen ABC"
+    
+@talk
+def speak_soft():
+    return "Listen ABC"
+print(speak_loud())
+print(speak_soft())
+
+
+o/p:
+
+File "main.py", line 20, in <module>                                                                                        
+    @split_word                                                                                                               
+  File "main.py", line 17, in talk                                                                                            
+    return inner()                                                                                                            
+  File "main.py", line 16, in inner                                                                                           
+    return b.lower()  
+
