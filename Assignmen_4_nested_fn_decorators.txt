@@ -11,8 +11,14 @@ def action(fun):
 action(speak())
 
 o/p:
-   fun()                                                                                                                     
-TypeError: 'NoneType' object is not callable  
+ABC                                                                                                                             
+DEF                                                                                                                             
+Traceback (most recent call last):                                                                                              
+  File "main.py", line 7, in <module>                                                                                           
+    action(speak())                                                                                                             
+  File "main.py", line 6, in action                                                                                             
+    fun()                                                                                                                       
+TypeError: 'NoneType' object is not callable 
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
