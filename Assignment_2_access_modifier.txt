@@ -1,0 +1,47 @@
+Assignment 2
+
+import math
+class Company:
+    _disp_number=5
+    displ=100
+    def __init__(self,name):
+        self.name="Google"
+    def show_name(self):
+        print(self.name)
+    def show_count_protected(cls):
+        print(cls. _disp_number)  
+    def show_count_public(cls):
+        print(cls.displ)
+       
+class employee(Company):
+    def __init__(self,e_name,name):
+        self.e_name="Kriti"
+        Company.__init__(self,name)
+    def stat_fun(n1,n2):
+        print(n1+n2)
+       
+       
+C=Company('yahoo')
+E=employee('riya','ola')
+C.show_name()
+C.show_count_protected()
+employee.stat_fun(3,5)
+print(Company.displ)
+print(Company._disp_number)
+print("public")
+E.show_count_public()
+print("protected")
+E.show_count_protected()
+
+
+o/p:
+
+Google                                                                                                                        
+5                                                                                                                             
+8                                                                                                                             
+100                                                                                                                           
+5                                                                                                                             
+public 
+100                                                                                                                           
+protected                                                                                                                     
+5  
