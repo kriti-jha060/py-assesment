@@ -23,5 +23,20 @@ enter a number to check divisibility :
 number divisible by 3  
 
 4)
+print("enter a range of numbers :")
+a=eval(input())
+b=eval(input())
+sum=0
+for i in range (a,b+1):
+    if i%3==0:
+        sum=sum+i
+    
+print("total sum  of digit divisible by 3 :",sum)
+    
+ o/p:
+ enter a range of numbers :                                                                                                    
+1                                                                                                                             
+9                                                                                                                             
+total sum  of digit divisible by 3 : 18 
 
 5)
