@@ -27,3 +27,11 @@ Welcome To Python
 
 6)
 
+list1=["Welcome","to","python"]
+str1=" "
+str2=str1.join(list1)
+print(str2)
+
+o/p:
+
+Welcome to python
