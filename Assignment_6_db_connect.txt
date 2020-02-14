@@ -89,4 +89,28 @@ o/p:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+#updating record
+
+import mysql.connector
+try:
+    db1=mysql.connector.connect(host="localhost" ,username="root",password="root",database="dbconnect" )
+    mycursor=db1.cursor()
+    mycursor.execute("UPDATE comp SET vacancy=11 WHERE dep_name='IT'")
+    mycursor.execute("select * from comp")
+
+    results = mycursor.fetchall()
+    print(results)
+
+    db1.commit()
+
+except:
+    print("connectivity not possible")
+    db1.rollback()
+finally:
+    db1.close()
+    
+  o/p:
+  [('IT', 50, 11), ('FINANCE', 20, 2), ('HR', 10, 1)]
+
+
 
