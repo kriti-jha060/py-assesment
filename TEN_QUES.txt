@@ -135,6 +135,23 @@ sum of digits is 10
 
 8) ORDER BASED ON THIRD ELEMENT
 
+l=["wcab","wcde","wcbe","wdce"]
+d={}
+a=[]
+for i in l:
+    a.append(i[2])
+    d[i[2]] = i
+#print(d)
+a.sort()
+new=[]
+for i in a:
+    if i in d:
+        new.append(d.get(i))
+print("new list sorted based on 3rd element :",new)
+
+o/p:
+new list sorted based on 3rd element : ['wcab', 'wcbe', 'wdce', 'wcde']
+
 
 9)PALINDOME
 def check_palindrome(n):
