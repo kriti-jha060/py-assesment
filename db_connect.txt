@@ -1,0 +1,92 @@
+
+#connecting mysql
+
+import mysql.connector
+
+db1=mysql.connector.connect(host="localhost" ,username="root",password="root" )
+mycursor=db1.cursor()
+sql1='show databases '
+mycursor.execute(sql1)
+results=user.fetchall()
+print(results)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#creating database
+
+import mysql.connector
+
+db1=mysql.connector.connect(host="localhost" ,username="root",password="root" )
+mycursor=db1.cursor()
+sql1='CREATE database dbconnect '
+mycursor.execute(sql1)
+#results=user.fetchall()
+#print(results)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#creating table
+
+import mysql.connector
+
+db1=mysql.connector.connect(host="localhost" ,username="root",password="root",database="dbconnect" )
+mycursor=db1.cursor()
+sql1='CREATE table comp(dep_name varchar(25),emp_no int,vacancy int) '
+mycursor.execute(sql1)
+#results=user.fetchall()
+#print(results)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#fetching records  from csv file into table
+
+import csv
+import mysql.connector
+try:
+
+    db1=mysql.connector.connect(host="localhost" ,username="root",password="root",database="dbconnect" )
+    mycursor=db1.cursor()
+    file=open("details.csv","r")
+    data=csv.reader(file)
+    for i in data:
+        print(i)
+    mycursor.execute("insert into comp (dep_name,emp_no,vacancy) values (%s,%s,%s)",i)
+    db1.commit()
+except:
+    print("connectivity not possible")
+    db1.rollback()
+finally:
+    db1.close()
+
+o/p:
+['IT', '50', '5']
+['FINANCE', '20', '2']
+['HR', '10', '1']
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#reading data from table
+
+import mysql.connector
+try:
+
+    db1=mysql.connector.connect(host="localhost" ,username="root",password="root",database="dbconnect" )
+    mycursor=db1.cursor()
+    mycursor.execute("select * from comp")
+    results=mycursor.fetchall()
+    print(results)
+    db1.commit()
+except:
+    print("connectivity not possible")
+    db1.rollback()
+finally:
+    db1.close()
+
+#results=user.fetchall()
+#print(results)
+
+o/p:
+
+[('IT', 50, 5), ('FINANCE', 20, 2), ('HR', 10, 1)]
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
