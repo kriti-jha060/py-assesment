@@ -1,0 +1,163 @@
+1)
+print('enter number of words :')
+a=int(input())
+str1=""
+for i in range(0,a):
+    a=input()
+    str1=str1+"\n" + a 
+print( "words entered\n",str1)
+a=str1.split("\n")
+l1=[]
+dict1={}
+for i in a:
+    if i not in l1 and i !="":
+        l1.append(i)
+print("count of distinct words")
+for i in l1:
+    c=str1.count(i)
+    print(i,c)
+    
+o/p:
+
+enter number of words :                                                                                                         
+5                                                                                                                               
+abc                                                                                                                             
+def                                                                                                                             
+abc                                                                                                                             
+def                                                                                                                             
+ghi                                                                                                                             
+words entered                                                                                                                   
+                                                                                                                                
+abc                                                                                                                             
+def                                                                                                                             
+abc                                                                                                                             
+def                                                                                                                             
+ghi                                                                                                                             
+count of distinct words                                                                                                         
+abc 2                                                                                                                           
+def 2                                                                                                                           
+ghi 1   
+
+2)
+import math
+print("enter number of rational numbers:")
+a=int(input())
+sum1=1
+l1=[]
+for i in range(a):
+    print("enter two integer separated by space :")
+    c= input()
+    l1.append(c)
+    d=c.split(" ")
+    sum1=sum1*int(d[0])/int(d[1])
+sum2=sum1.as_integer_ratio()
+print(sum2)
+print("list entered",l1)
+print("sum is :",sum2[0]," ",sum2[1])
+    
+o/p:
+enter number of rational numbers:                                                                                               
+3                                                                                                                               
+enter two integer separated by space :                                                                                          
+1 2                                                                                                                             
+enter two integer separated by space :                                                                                          
+3 4                                                                                                                             
+enter two integer separated by space :                                                                                          
+10 6                                                                                                                            
+(5, 8)                                                                                                                          
+list entered ['1 2', '3 4', '10 6']                                                                                             
+sum is : 5   8   
+
+3)
+
+4)
+
+print("enter the size :")
+a= int(input())
+for i in  range(0,a):
+    for j in range(1,i+2):
+        print(j,end=" ")
+    for k in range(1,i+1):
+        print((i+1)-k,end=" ")
+    print("\n")
+
+o/p:
+
+1 
+
+1 2 1 
+
+1 2 3 2 1 
+
+1 2 3 4 3 2 1 
+
+1 2 3 4 5 4 3 2 1 
+
+
+5)
+
+print("enter number of students :")
+a=int(input())
+print(" enter name and marks separated by space for 3 subjects:")
+l=[]
+for i in range(0,a):
+    b=input()
+    l.append(b)
+l1=[]
+d={}
+for j in range (0,a):
+    c=l[j].split(" ")
+    l1.append(c[0])
+    d[c[0]]=c[1],c[2],c[3]
+
+#print(l1)
+#print(d)
+
+print("enter the name of student :")
+name=input()
+
+marks=list(d.get(name))
+print(marks)
+sum=0
+for s in marks:
+    sum=sum+int(s)
+avg=sum/3
+print("average marks :" , avg)
+
+o/p:
+
+enter number of students :
+2
+ enter name and marks separated by space for 3 subjects:
+a 2 2 2
+b 5 5 5
+enter the name of student :
+a
+['2', '2', '2']
+average marks : 2.0
+
+
+
+6)
+
+7)
+print("enter space separated integers  in two sets :")
+a=input()
+b=input()
+A=a.split(" ")
+B=b.split(" ")
+print("output")
+tup=()
+l=[]
+for i in range (0,len(A)):
+    for j in range(0,len(B)):
+        tup=(A[i],B[j])
+        l.append(tup)
+print(l)
+
+o/p:
+enter space separated integers  in two sets :                                                                                   
+1 2                                                                                                                             
+3 4                                                                                                                             
+output                                                                                                                          
+[('1', '3'), ('1', '4'), ('2', '3'), ('2', '4')] 
