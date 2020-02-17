@@ -111,6 +111,37 @@ finally:
     
   o/p:
   [('IT', 50, 11), ('FINANCE', 20, 2), ('HR', 10, 1)]
+  
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  #json file
+
+import json
+import mysql.connector
+try:
+
+    db1=mysql.connector.connect(host="localhost" ,username="root",password="root",database="dbconnect" )
+    mycursor=db1.cursor()
+    mycursor.execute("select * from comp")
+    results=mycursor.fetchall()
+    dic1={}
+    str1='.json'
+    for i in results:
+        dic1[i[0]]=i[1::]
+        c=json.dumps(dic1)
+        print(c)
+        f_name=i[0]+str1
+        f=open(f_name,"w")
+        f.write(c)
+        f.close()
+        d={}
+    db1.commit()
+except:
+    print("connectivity not possible")
+    db1.rollback()
+finally:
+    db1.close()
+
+  
 
 
 
