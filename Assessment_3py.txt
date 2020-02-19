@@ -69,6 +69,25 @@ list entered ['1 2', '3 4', '10 6']
 sum is : 5   8   
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 3)
+import re
+num = int(input("Enter a number : "))
+email = []
+valid_email = []
+for i in range(0,num):
+    email.append(input())
+for i in email:
+    if re.findall(r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$', i):
+        valid_email.append(i)
+print("valid emails:")
+print(valid_email)
+
+o/p:
+Enter a number : 3                                                                                                            
+k-12@gmail.com                                                                                                                
+k_$123@gmail.com                                                                                                              
+k_123@gmail.com 
+valid emails:
+['k-12@gmail.com', 'k_123@gmail.com']
 
 4)
 
