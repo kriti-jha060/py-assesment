@@ -76,19 +76,19 @@ valid_email = []
 for i in range(0,num):
     email.append(input())
 for i in email:
-    if re.findall(r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$', i):
+    # if re.findall(r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$', i):
+    if re.findall(r'(^[\w|\-|]+\@[a-z|0-9]+\.[a-z]{2,50})', i):
         valid_email.append(i)
 print("valid emails:")
 print(valid_email)
 
 o/p:
-Enter a number : 3                                                                                                            
-k-12@gmail.com                                                                                                                
-k_$123@gmail.com                                                                                                              
-k_123@gmail.com 
-valid emails:
-['k-12@gmail.com', 'k_123@gmail.com']
-
+Enter a number : 3                                                                                                                                         
+kriti@gmail.com                                                                                                                                            
+kriti$123@gmail.com                                                                                                                                        
+krit_ti-123@gmail.com                                                                                                                                      
+valid emails:                                                                                                                                              
+['kriti@gmail.com', 'krit_ti-123@gmail.com'] 
 4)
 
 print("enter the size :")
