@@ -1,9 +1,65 @@
 ASSESSMENT 1
 
 1)
+import random
+numbers = []
+for i in range(0,10):
+    if i not in numbers:
+        numbers.append(random.randrange(0,50))
+print(numbers)
+number = random.choice(numbers)
+#print(number)
+print("3 chances,  Enter the number to guess : ")
+for x in range(3):
+    guess = int (input ())
+    if x <= 1:
+        if guess == number:
+            print(" correct")
+            break
+        elif guess<=number+5 and guess>=number-5:
+            print("You are close,try again")
+
+        else:
+            print("wrong choice ")
+    else:
+        if guess==number:
+            print(" guessed correctly ")
+            break
+        else:
+            print(" out of chances")
+            
+o/p:
+[14, 24, 10, 19, 39, 29, 20, 27, 4, 6]
+3 chances,  Enter the number to guess : 
+10
+wrong choice 
+20
+You are close,try again
+24
+ guessed correctly 
+
+Process finished with exit code 0
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 2)
+num_dic = {"one":"1","two":"2","three":"3","four":"4","five":"5","six":"6","seven":"7","eight":"8","nine":"9","plus":"+","minus":"-","modulus":"%","product":"*"}
 
+exp = input("Enter the string: ")
+exp_list = exp.split(" ")
+a = ""
+for x in exp_list:
+    for k,v in num_dic.items():
+        if x == k:
+            a = a + num_dic.get(k)
+number = str(eval(a))
+for x,y in num_dic.items():
+    if number == y:
+        print(x)
+o/p:
+Enter the string: one plus two                                                                                                
+three
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 3)
 
 print("enter a number to check divisibility :")
@@ -21,7 +77,7 @@ o/p:
 enter a number to check divisibility :                                                                                        
 21                                                                                                                            
 number divisible by 3  
-
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 4)
 print("enter a range of numbers :")
 a=eval(input())
@@ -38,5 +94,16 @@ print("total sum  of digit divisible by 3 :",sum)
 1                                                                                                                             
 9                                                                                                                             
 total sum  of digit divisible by 3 : 18 
-
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 5)
+import calendar
+
+dob = input("Enter Birthdate (yyyy-mm-dd) : ")
+date = dob.split("-")
+day = calendar.weekday(int(date[0]),int(date[1]),int(date[2]))
+#print(day)
+print(calendar.day_name[day])
+
+o/p:
+Enter Birthdate (yyyy-mm-dd) : 2020-02-20                                                                                     
+Thursday 
