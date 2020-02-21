@@ -1,0 +1,6 @@
+12:49:59 - Print maximum - sold product with product details
+12:52:25 - Print minimum - sold product with product details
+13:13:34 - Print minimum - sold product with product details
+13:14:30 - Get the billing date from user and print the product details and total amount of displaying products
+14:13:20 - Print minimum - sold product with product details
+14:15:07 - Print minimum - sold product with product details
