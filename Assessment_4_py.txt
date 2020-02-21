@@ -229,6 +229,90 @@ except:
     db1.rollback()
 finally:
     db1.close()
+    
+    
+    
+################## try and except #############
+
+
+def try_except():
+    
+    try:
+        
+        x = int(input("Please enter a number: "))
+        print("Dividing 50 by", x,"will give you :", 50/x)
+    except ValueError:
+        print("The input was not an integer. Please try again...")
+    except ZeroDivisionError:
+        print("The divisor cannot be zero")
+
+def err(i):
+    try:
+    
+        a=[1,2,3,4,5,8,10]
+        print("number at index",i,"is ",a[i])
+    except IndexError:
+        print("index out of range")
+        
+def draw(y):
+    try:
+        z=int(y)
+        li=[1,50,45,43,78,56]
+        for j in li:
+            if y==j:
+                print("Lucky draw!!")
+                break
+            else:
+                print("unlucky!!")
+                break
+    except:
+        print("you have to print positive integers!!")
+
+while True:
+    print("enter index number to get value :")
+    x=int(input())
+    err(x)
+    print("enter number to check lucky draw")
+    y=input()
+    draw(y)
+    print("print 'T' to execute and 'F' to stop :")
+    keep_asking = input()
+    if keep_asking=='T':
+        
+        try_except()
+    else:
+        exit()
+        
+   o/p:
+   enter index number to get value :                                                                                       
+9                                                                                                                       
+index out of range                                                                                                      
+enter number to check lucky draw                                                                                        
+4                                                                                                                       
+unlucky!!                                                                                                               
+print 'T' to execute and 'F' to stop :                                                                                  
+T                                                                                                                       
+Please enter a number: 0                                                                                                
+The divisor cannot be zero                                                                                              
+enter index number to get value :                                                                                       
+5                                                                                                                       
+number at index 5 is  8                                                                                                 
+enter number to check lucky draw                                                                                        
+76                                                                                                                      
+unlucky!!                                                                                                               
+print 'T' to execute and 'F' to stop :                                                                                  
+T                                                                                                                       
+Please enter a number: 5.5                                                                                              
+The input was not an integer. Please try again...                                                                       
+enter index number to get value :                                                                                       
+1                                                                                                                       
+number at index 1 is  2                                                                                                 
+enter number to check lucky draw
+55                                                                                                                      
+unlucky!!                                                                                                               
+print 'T' to execute and 'F' to stop :                                                                                  
+f  
+
 
 
 
