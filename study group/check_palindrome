@@ -1,0 +1,35 @@
+### count the max length palindrome 
+
+def palin(str1):
+    length=int(0)
+    for i in range(len(str1)):
+        for j in range(i+1,len(str1)):
+            if str1[i]==str1[j]:
+                str2=str1[i:j+1]
+                if str2==str2[::-1]:
+                    if length<len(str2):
+                        length=len(str2)
+
+    return(length)
+if __name__=="__main__":
+    str1="cabbage"
+    max_palin_length=palin(str1)
+    print("string is" , str1)
+    print("max length of palindrome is" , max_palin_length)
+	
+	
+	
+unit testing:
+import unittest
+from palindrome import palin
+
+
+class MyTestCase(unittest.TestCase):
+    def test_palin(self):
+
+        self.assertEqual(palin("madam"),5)
+        self.assertEqual(palin("racecar"),7)
+
+
+if __name__ == '__main__':
+    unittest.main()
